@@ -16,6 +16,7 @@ async function run() {
     try {
         const postCollection = client.db('postHub').collection('posts');
         const userCollection = client.db('postHub').collection('user');
+        const commentCollection = client.db('postHub').collection('comments');
 
         app.get('/posts', async (req, res) => {
             const query = {};
@@ -82,6 +83,21 @@ async function run() {
                 }    
             }
             const result = await userCollection.updateOne(filter, updatedUser, option);
+            res.send(result);
+        })
+
+        app.get('/comments', async (req, res) => {
+            const query = {};
+            const cursor = commentCollection.find(query);
+            const userComment = await cursor.toArray();
+            res.send(userComment);
+        })
+
+
+        app.post('/comments', async (req, res) => {
+            const userComments = req.body;
+            console.log(userComments);
+            result = await commentCollection.insertOne(userComments);
             res.send(result);
         })
 
