@@ -20,7 +20,7 @@ async function run() {
 
         app.get('/posts', async (req, res) => {
             const query = {};
-            const cursor = postCollection.find(query);
+            const cursor = postCollection.find(query).sort({"_id" : -1});
             const post = await cursor.toArray();
             res.send(post);
         })
