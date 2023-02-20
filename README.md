@@ -1,7 +1,8 @@
 # Created By Md. Minhajur Rahman
 
 ## Project Name : `PostHub`
-Project Deploy Site For Client side: https://effortless-crisp-a5f980.netlify.app/ \
+Project Deploy Site For Client side: https://posthub-bcf77.web.app OR\
+Project Deploy Site For Client side: https://effortless-crisp-a5f980.netlify.app \
 Project Deploy Site For Server side: https://post-hub-server.vercel.app
 
 
